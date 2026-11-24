@@ -1,0 +1,216 @@
+/*Dorka portalatin Feliz 100572272*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1A237E 0%, #283593 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.contenedor-principal {
+    width: 100%;
+    max-width: 850px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(26, 35, 126, 0.35);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    max-height: 750px;
+}
+
+/* ---------- CABECERA ---------- */
+.cabecera {
+    background: linear-gradient(90deg, #1A237E 0%, #303F9F 100%);
+    color: white;
+    padding: 22px;
+    text-align: center;
+}
+
+.cabecera h1 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.cabecera p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* ---------- PREGUNTAS SUGERIDAS ---------- */
+.preguntas-sugeridas {
+    padding: 15px 20px;
+    background: #F3E5F5;
+    border-bottom: 1px solid #C5CAE9;
+}
+
+.preguntas-sugeridas h3 {
+    font-size: 14px;
+    color: #1A237E;
+    margin-bottom: 10px;
+}
+
+.lista-preguntas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.btn-sugerido {
+    background: #FFFFFF;
+    border: 1px solid #303F9F;
+    color: #1A237E;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-sugerido:hover {
+    background: #303F9F;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+/* ---------- ÁREA DEL CHAT ---------- */
+.area-chat {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #FFFFFF;
+}
+
+.mensaje {
+    margin-bottom: 18px;
+    display: flex;
+    align-items: flex-start;
+    animation: aparecer 0.3s ease;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.mensaje.usuario {
+    flex-direction: row-reverse;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+    margin: 0 12px;
+}
+
+.mensaje.usuario .avatar {
+    background: #303F9F;
+    color: #FFFFFF;
+}
+
+.mensaje.bot .avatar {
+    background: #E8EAF6;
+    color: #1A237E;
+}
+
+.texto-mensaje {
+    padding: 14px 18px;
+    border-radius: 18px;
+    max-width: 75%;
+    line-height: 1.6;
+    font-size: 15px;
+    white-space: pre-line;
+}
+
+.mensaje.usuario .texto-mensaje {
+    background: #303F9F;
+    color: #FFFFFF;
+    border-bottom-right-radius: 5px;
+}
+
+.mensaje.bot .texto-mensaje {
+    background: #F8F9FF;
+    color: #222222;
+    border: 1px solid #C5CAE9;
+    border-bottom-left-radius: 5px;
+    box-shadow: 0 2px 4px rgba(26, 35, 126, 0.08);
+}
+
+.indicacion-escribiendo {
+    font-style: italic;
+    color: #7986CB;
+    font-size: 13px;
+    margin-left: 64px;
+    margin-bottom: 15px;
+}
+
+/* ---------- ENTRADA DE TEXTO ---------- */
+.entrada-mensaje {
+    display: flex;
+    padding: 20px;
+    border-top: 1px solid #E8EAF6;
+    background: #FFFFFF;
+}
+
+.entrada-mensaje input {
+    flex: 1;
+    padding: 14px 20px;
+    border: 2px solid #C5CAE9;
+    border-radius: 25px;
+    font-size: 15px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.entrada-mensaje input:focus {
+    border-color: #303F9F;
+}
+
+.entrada-mensaje button {
+    margin-left: 12px;
+    padding: 14px 28px;
+    background: linear-gradient(90deg, #1A237E 0%, #303F9F 100%);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 25px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.entrada-mensaje button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(48, 63, 159, 0.4);
+}
+
+/* ---------- RESPONSIVE (para celular) ---------- */
+@media (max-width: 600px) {
+    .contenedor-principal {
+        height: 100vh;
+        max-height: 100vh;
+        border-radius: 0;
+    }
+
+    .texto-mensaje {
+        max-width: 85%;
+    }
+
+    .cabecera h1 {
+        font-size: 18px;
+    }
+}

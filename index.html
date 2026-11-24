@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot — Estatuto Orgánico de la UASD</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <div class="contenedor-principal">
+        
+        <!-- CABECERA -->
+        <header class="cabecera">
+            <h1>🏛️ Chatbot del Estatuto Orgánico de la UASD</h1>
+            <p>Consulta información sobre la Universidad Autónoma de Santo Domingo</p>
+        </header>
+
+        <!-- PREGUNTAS SUGERIDAS -->
+        <div class="preguntas-sugeridas">
+            <h3>💬 Preguntas sugeridas:</h3>
+            <div id="preguntas-sugeridas" class="lista-preguntas">
+                <!-- Se llenan automáticamente desde conocimientos.js -->
+            </div>
+        </div>
+
+        <!-- ÁREA DEL CHAT -->
+        <div id="area-chat" class="area-chat">
+            <!-- Mensaje de bienvenida -->
+            <div class="mensaje bot">
+                <div class="avatar">🤖</div>
+                <div class="texto-mensaje">¡Bienvenido! 👋<br><br>Soy tu asistente virtual para consultar el <strong>Estatuto Orgánico de la Universidad Autónoma de Santo Domingo</strong>.<br><br>Pregúntame lo que desees o selecciona una de las preguntas sugeridas.</div>
+            </div>
+        </div>
+
+        <!-- ENTRADA DE TEXTO -->
+        <div class="entrada-mensaje">
+            <input type="text" id="entrada-texto" placeholder="Escribe tu pregunta aquí...">
+            <button id="btn-enviar">Enviar ➤</button>
+        </div>
+
+    </div>
+
+    <!-- ARCHIVOS JAVASCRIPT -->
+    <script src="conocimientos.js"></script>
+    <script src="chatbot.js"></script>
+    
+</body>
+</html>
